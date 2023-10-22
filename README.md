@@ -139,7 +139,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
         - Inside [AuthController] file...
 
-        [AuthController]: https://github.com/dharmilweb/2_Api_Jwt_Authentication/blob/main/app/Http/Controllers/AuthController.php
+        [AuthController]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/app/Http/Controllers/AuthController.php
 
     - Create Middleware
         - Command :-
@@ -213,15 +213,29 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
             php artisan l5-swagger:generate
         ```
 
+    - Add Web Authenticaion
+        - Command :-
+            ```
+                composer require laravel/ui
+                php artisan ui bootstrap --auth
+
+                npm install
+                npm run dev     OR      npm run build
+            ```
+
     - Run Laravel Project...
         - Command :-
             ```
                 php artisan serve
             ```
 
-        - Url :-
+        - Api Url :-
             ```
                 http://localhost:8000/api/documentation
+            ```
+        - Web Url :-
+            ```
+                http://localhost:8000/login
             ```
 
         <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_2.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_2.png" width="400" alt="Laravel Logo"></a></p>
