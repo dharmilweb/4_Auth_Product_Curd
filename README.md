@@ -223,6 +223,86 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
             npm run dev     OR      npm run build
         ```
 
+- Create Api for Product Curd... 
+
+    - Routes Changes... 
+
+    ```html
+        <?php
+
+        use Illuminate\Http\Request;
+        use Illuminate\Support\Facades\Route;
+        use App\Http\Controllers\AuthController;
+        use App\Http\Controllers\ProductController;
+
+
+        Route::post('/register', [AuthController::class, 'register'])->name('register');
+        Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+        Route::group(['middleware' => 'jwt.verify'], function ($router) {
+
+            Route::group(['prefix' => 'auth'], function ($router) {
+                Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+                Route::post('/refresh', [AuthController::class, 'refresh'])->name('refresh');
+                Route::post('/me', [AuthController::class, 'me'])->name('me');
+            });
+            Route::group(['prefix' => 'product'], function ($router) {
+
+                Route::post('list', [ ProductController::class, 'list']);
+                Route::post('new', [ ProductController::class, 'new']);
+                Route::post('edit/{id}', [ ProductController::class, 'update']);
+                Route::get('details/{id}', [ ProductController::class, 'view']);
+                Route::patch('activate/{id}', [ ProductController::class, 'activate']);
+                Route::patch('deactivate/{id}', [ ProductController::class, 'deactivate']);
+                Route::delete('destroy/{id}', [ ProductController::class, 'destroy']);
+            });
+        });
+    ```
+    - Command :-
+        ```
+        php artisan make:migration create_products_table --create=products
+        php artisan make:controller ProductController
+        php artisan make:model Product 
+        ```
+
+    - Add Product Migration
+        ```
+            Schema::create('products', function (Blueprint $table) {
+                $table->id();
+                $table->string('name');
+                $table->text('detail');
+                $table->string('image');
+                $table->boolean('is_active')->default(true)->comment('default 1 1=>active 0=>inactive');
+                $table->timestamps();
+            });
+        ```
+    
+    - Command :-
+        ```
+        php artisan migrate
+        ```
+
+    - Changes Product Model...
+        ```html
+        class Product extends Model
+        {
+            use HasFactory;
+
+            /**
+            * The attributes that aren't mass assignable.
+            *
+            * @var array
+            */
+            
+            protected $guarded = ['id'];
+            public $timestamps = false;
+        }
+        ```
+
+    - Inside [ProductController] file...
+
+    [ProductController]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/product_curd/app/Http/Controllers/ProductController.php
+
 - Run Laravel Project...
     - Command :-
         ```
