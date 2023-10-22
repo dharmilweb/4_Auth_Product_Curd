@@ -7,12 +7,12 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Api Authentication
+## About Authentication
 
 This Repository having Authentication of Web & Api both Seprate using some command & stapes.
 Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Api Authentication
+## Learning Api & Web Authentication
 - Create Project
     - Command :-
     ```
@@ -40,7 +40,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
         <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_1.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_1.png" width="400" alt="Laravel Logo"></a></p>
 
-- Add JWT Configration...
+- Add JWT Configration for Api Authentication...
     - Command :-
         ```
             composer require tymon/jwt-auth
@@ -213,30 +213,30 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
             php artisan l5-swagger:generate
         ```
 
-    - Add Web Authenticaion
-        - Command :-
-            ```
-                composer require laravel/ui
-                php artisan ui bootstrap --auth
+- Add Web Authenticaion
+    - Command :-
+        ```
+            composer require laravel/ui
+            php artisan ui bootstrap --auth
 
-                npm install
-                npm run dev     OR      npm run build
-            ```
+            npm install
+            npm run dev     OR      npm run build
+        ```
 
-    - Run Laravel Project...
-        - Command :-
-            ```
-                php artisan serve
-            ```
+- Run Laravel Project...
+    - Command :-
+        ```
+            php artisan serve
+        ```
 
-        - Api Url :-
-            ```
-                http://localhost:8000/api/documentation
-            ```
-        - Web Url :-
-            ```
-                http://localhost:8000/login
-            ```
+    - Api Url :-
+        ```
+            http://localhost:8000/api/documentation
+        ```
+    - Web Url :-
+        ```
+            http://localhost:8000/login
+        ```
 
         <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_2.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_2.png" width="400" alt="Laravel Logo"></a></p>
 
