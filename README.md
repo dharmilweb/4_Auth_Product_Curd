@@ -38,7 +38,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
             php artisan migrate
         ```
 
-        <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_1.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_1.png" width="400" alt="Laravel Logo"></a></p>
+        <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_2.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_2.png" width="400" alt="Laravel Logo"></a></p>
 
 - Add JWT Configration for Api Authentication...
     - Command :-
@@ -318,7 +318,8 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
             http://localhost:8000/login
         ```
 
-        <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_2.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_2.png" width="400" alt="Laravel Logo"></a></p>
+        <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_1.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_1.png" width="400" alt="Laravel Logo"></a></p>
+        <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_3.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_3.png" width="400" alt="Laravel Logo"></a></p>
 
 ## Authentications
 Laravel having different types of `Authentication` for Web & Api Checkout its.
