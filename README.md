@@ -16,7 +16,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 - Create Project
     - Command :-
     ```
-        laravel new 4_Auth_Product_Curd
+        laravel new 4_Auth_Product_Curd     &&      composer create-project laravel/laravel 4_Auth_Product_Curd
         cd 4_Auth_Product_Curd
     ```
 
@@ -303,6 +303,117 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
 
     [ProductController]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/product_curd/app/Http/Controllers/ProductController.php
 
+
+- Create Product Curd inside Web...
+
+    - Create Controller
+        ```
+        php artisan make:controller Auth/ProductController --resource --model=Product
+        ```
+
+    - Add Url in web.php file...
+
+        ```html
+        
+        use App\Http\Controllers\Auth\ProductController;
+
+        <!-- Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home'); -->
+
+        Route::group(['middleware' => 'auth'], function () {
+
+            /* Products */
+            Route::resource('products', ProductController::class);
+        });
+
+        ```
+
+    - Check Route List in CMD
+        ```
+        php artisan route:list
+        ```
+
+    - Inside [Web ProductController] file...
+
+    [Web ProductController]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/product_curd/app/Http/Controllers/Auth/ProductController.php
+
+    - Changes when User Login Redirect Home to Product List page...
+
+        - Go inside LoginController file...
+            ```
+            /**
+            * Where to redirect users after login.
+            *
+            * @var string
+            */
+            protected $redirectTo = RouteServiceProvider::HOME;
+            ```
+
+        - Go inside RouteServiceProvider file...
+
+            ```
+            Change Upper home to products code...
+            <!-- public const HOME = '/home';  -->
+            public const HOME = '/products';
+
+            ```
+    - Create Product Pages...
+        - 1_products
+            - [list]    [Path :- resources\views\1_products\list.blade.php ] 
+            - [edit]    [Path :- resources\views\1_products\edit.blade.php ]
+            - [view]    [Path :- resources\views\1_products\view.blade.php ]
+        - errors
+            - [index]  [Path :- resources\views\errors\index.blade.php ]
+        - layouts
+            - [app]  [Path :- resources\views\layouts\app.blade.php ]
+
+[list]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/list.blade.php
+[edit]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/edit.blade.php
+[view]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/view.blade.php
+[index]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/errors/index.blade.php
+[app]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/layouts/app.blade.php
+
+
+    - Product List Pagination Changes...
+        
+        - Go inside AppServiceProvider file & Add Paginator...
+        ```html
+        <?php
+
+        namespace App\Providers;
+
+        use Illuminate\Support\ServiceProvider;
+        use Illuminate\Pagination\Paginator;
+
+        class AppServiceProvider extends ServiceProvider
+        {
+            /**
+            * Register any application services.
+            */
+            public function register(): void
+            {
+                //
+            }
+
+            /**
+            * Bootstrap any application services.
+            */
+            public function boot(): void
+            {
+                //
+                Paginator::useBootstrap();
+            }
+        }
+        ```
+
+    - Product PopUp Message Changes...
+        - Message Show & fadeOut Automatic
+
+        ```html
+        <script>
+            $("#custMsg").show().delay(5000).fadeOut();
+        </script>
+        ```
+
 - Run Laravel Project...
     - Command :-
         ```
@@ -316,10 +427,12 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
     - Web Url :-
         ```
             http://localhost:8000/login
+            http://localhost:8000/products
         ```
 
         <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_1.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_1.png" width="400" alt="Laravel Logo"></a></p>
         <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_3.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_3.png" width="400" alt="Laravel Logo"></a></p>
+        <p align="center"><a href="https://raw.githubusercontent.com/dharmilweb/4_Auth_Product_Curd/master/public/Api_Auth/Input_4.png" target="_blank"><img src="https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/public/Api_Auth/Input_4.png" width="400" alt="Laravel Logo"></a></p>
 
 ## Authentications
 Laravel having different types of `Authentication` for Web & Api Checkout its.
@@ -327,10 +440,12 @@ Laravel having different types of `Authentication` for Web & Api Checkout its.
 - [Web Authentication]
 - [Api Jwt Authentication]
 - [Api Sanctum Authentication]
+- [Full Authentication Project CURD]
 
 [Web Authentication]: https://github.com/dharmilweb/1_Web_Authentication
 [Api Jwt Authentication]: https://github.com/dharmilweb/2_Api_Jwt_Authentication
 [Api Sanctum Authentication]: https://github.com/dharmilweb/3_Api_Sanctum_Auth
+[Full Authentication Project CURD]: https://github.com/dharmilweb/4_Auth_Product_Curd
 
 ## License
 

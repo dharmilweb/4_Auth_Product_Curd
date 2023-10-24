@@ -76,5 +76,8 @@
             @yield('content')
         </main>
     </div>
+    <script>
+        $("#custMsg").show().delay(5000).fadeOut();
+    </script>
 </body>
 </html>
