@@ -401,7 +401,7 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
                     Paginator::useBootstrap();
                 }
             }
-        ```
+            ```
 
     - Product PopUp Message Changes...
         - Message Show & fadeOut Automatic
