@@ -376,42 +376,40 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
     - Product List Pagination Changes...
         
         - Go inside AppServiceProvider file & Add Paginator...
-        ```html
-        <?php
+            ```html
+            namespace App\Providers;
 
-        namespace App\Providers;
+            use Illuminate\Support\ServiceProvider;
+            use Illuminate\Pagination\Paginator;
 
-        use Illuminate\Support\ServiceProvider;
-        use Illuminate\Pagination\Paginator;
-
-        class AppServiceProvider extends ServiceProvider
-        {
-            /**
-            * Register any application services.
-            */
-            public function register(): void
+            class AppServiceProvider extends ServiceProvider
             {
-                //
-            }
+                /**
+                * Register any application services.
+                */
+                public function register(): void
+                {
+                    //
+                }
 
-            /**
-            * Bootstrap any application services.
-            */
-            public function boot(): void
-            {
-                //
-                Paginator::useBootstrap();
+                /**
+                * Bootstrap any application services.
+                */
+                public function boot(): void
+                {
+                    //
+                    Paginator::useBootstrap();
+                }
             }
-        }
         ```
 
     - Product PopUp Message Changes...
         - Message Show & fadeOut Automatic
 
         ```html
-        <script>
-            $("#custMsg").show().delay(5000).fadeOut();
-        </script>
+            <script>
+                $("#custMsg").show().delay(5000).fadeOut();
+            </script>
         ```
 
 - Run Laravel Project...
