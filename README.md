@@ -366,11 +366,11 @@ Laravel is accessible, powerful, and provides tools required for large, robust a
         - layouts
             - [app]  [Path :- resources\views\layouts\app.blade.php ]
 
-[list]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/list.blade.php
-[edit]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/edit.blade.php
-[view]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/view.blade.php
-[index]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/errors/index.blade.php
-[app]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/layouts/app.blade.php
+        [list]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/list.blade.php
+        [edit]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/edit.blade.php
+        [view]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/1_products/view.blade.php
+        [index]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/errors/index.blade.php
+        [app]: https://github.com/dharmilweb/4_Auth_Product_Curd/blob/master/resources/views/layouts/app.blade.php
 
 
     - Product List Pagination Changes...
